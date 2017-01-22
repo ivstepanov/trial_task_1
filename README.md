@@ -1,4 +1,4 @@
-# Run form prebuild
+# Run from prebuild
     $ git clone https://github.com/ivstepanov/trial_task_1.git
     $ cd ./bin
     $ ./run_prebuild.sh
