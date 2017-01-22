@@ -1,3 +1,8 @@
+# Run form prebuild
+    $ git clone https://github.com/ivstepanov/trial_task_1.git
+    $ cd ./bin
+    $ ./run_prebuild.sh
+
 # Instruction for build and run
 riscv-qemu prerequisites:
 
