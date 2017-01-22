@@ -1,0 +1,34 @@
+diff --git a/target-riscv/op_helper.c b/target-riscv/op_helper.c
+index d70ffa3..ecc4869 100644
+--- a/target-riscv/op_helper.c
++++ b/target-riscv/op_helper.c
+@@ -467,9 +467,11 @@ target_ulong helper_csrrw(CPURISCVState *env, target_ulong src,
+ target_ulong helper_csrrs(CPURISCVState *env, target_ulong src,
+         target_ulong csr, target_ulong rs1_pass)
+ {
+-    validate_csr(env, csr, rs1_pass != 0);
+-    uint64_t csr_backup = csr_read_helper(env, csr);
+-    if (rs1_pass != 0) {
++    //printf("helper_csrrs\n");
++    validate_csr(env, csr, (rs1_pass != 0 || src != 0));
++    //uint64_t csr_backup = csr_read_helper(env, csr);
++    target_ulong csr_backup = csr_read_helper(env, csr);
++    if (rs1_pass != 0 || src != 0) {
+         csr_write_helper(env, src | csr_backup, csr);
+     }
+     return csr_backup;
+@@ -478,9 +480,11 @@ target_ulong helper_csrrs(CPURISCVState *env, target_ulong src,
+ target_ulong helper_csrrc(CPURISCVState *env, target_ulong src,
+         target_ulong csr, target_ulong rs1_pass)
+ {
+-    validate_csr(env, csr, rs1_pass != 0);
+-    uint64_t csr_backup = csr_read_helper(env, csr);
+-    if (rs1_pass != 0) {
++    //printf("helper_csrrc\n");
++    validate_csr(env, csr, (rs1_pass != 0 || src != 0));
++    //uint64_t
++    target_ulong  csr_backup = csr_read_helper(env, csr);
++    if (rs1_pass != 0 || src != 0) {
+         csr_write_helper(env, (~src) & csr_backup, csr);
+     }
+     return csr_backup;
