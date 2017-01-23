@@ -1,5 +1,6 @@
 # Run from prebuild
     $ git clone https://github.com/ivstepanov/trial_task_1.git
+    $ cd trial_task_1
     $ cd ./bin
     $ ./run_prebuild.sh
 
