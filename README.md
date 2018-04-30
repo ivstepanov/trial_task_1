@@ -12,12 +12,15 @@ riscv-tools prerequisites:
 
     sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev
 
-####Step 1:
+#### Step 1:
     $ git clone https://github.com/ivstepanov/trial_task_1.git
     $ cd trial_task_1
-####Step 2: build riscv-qemu, riscv-tools, FreeRTOS:
+    
+#### Step 2: build riscv-qemu, riscv-tools, FreeRTOS:
     $ ./build.sh
+    
 Console output can be found in build.log
-####Step 3: run qemu + FreeRTOS:
+
+#### Step 3: run qemu + FreeRTOS:
     $ ./run.sh
 
